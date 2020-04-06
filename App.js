@@ -12,6 +12,9 @@ var command = yargs.argv._[0];
 if (command === 'add') {
   console.log('Note added')
   notes.addingNote(title,body)
+ if (notes.title === '') {
+    console.log('add a title')
+  }
 } else if (command === 'remove') {
   console.log('Note removed')
   notes.removeNote(title)
@@ -24,4 +27,4 @@ if (command === 'add') {
   console.log('Here are all your notes')
   notes.listNotes(title)
 
-}
+} 

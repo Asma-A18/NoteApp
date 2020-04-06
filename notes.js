@@ -5,6 +5,9 @@ return JSON.parse(fs.readFileSync('notes.txt'))
 }
 
 var addingNote = (title , body) => {
+  if (!title) {
+    console.log ('add a title')
+  }
 var notes = getNote()
 var note = {
 title,
@@ -16,13 +19,19 @@ fs.writeFileSync('notes.txt',JSON.stringify(notes))
 }
 
 var removeNote = (title) => {
+  if (!title) {
+    console.log ('add a title')
+  }
 var notes = getNote()
   var filterednotes =  notes.filter (note => note.title !== title)
   fs.writeFileSync('notes.txt',JSON.stringify(filterednotes))
-
+  
 }
 
 var readNote = (title) => {
+  if (!title) {
+    console.log ('add a title')
+  }
     var notes = getNote()
     var readnotes =  notes.filter (note => note.title === title)
   console.log(readnotes)
